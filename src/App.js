@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import SocialMedias from "./components/SocialMedias";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <About />
                 <Projects />
             </main>
+            <SocialMedias />
         </>
     );
 }
