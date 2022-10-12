@@ -5,7 +5,7 @@ import Divider from "../components/Divider";
 const Home = () => {
     return (
         <section id="home" className="full-page home flex flex-col flow">
-            <div className="flex flex-col centered flow">
+            <div className="flex flex-col tagline centered flow">
                 <h1>
                     <span>I'M </span>
                     <span>G</span>
