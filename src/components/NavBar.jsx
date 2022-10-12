@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Divider from "./Divider";
 import ToggleButton from "./ToggleButton";
 
 const NavBar = () => {
@@ -13,6 +14,7 @@ const NavBar = () => {
                         isHidden ? "active" : ""
                     }`}
                 >
+                    <Divider />
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>

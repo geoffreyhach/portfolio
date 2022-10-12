@@ -3,24 +3,31 @@ import { useInView } from "react-intersection-observer";
 
 import img from "../assets/images/projettest.png";
 
-const Project = ({ name, tools, live, repo, direction = "from-right" }) => {
+const Project = ({
+    name,
+    tools,
+    desc,
+    live,
+    repo,
+    direction = "from-right",
+}) => {
     const { ref, inView } = useInView();
 
     return (
         <div
             ref={ref}
-            className={`project-card flex flex-col flow color-white ${
+            className={`project-cards flex flex-col flow color-white ${
                 inView ? direction : ""
             }`}
         >
             <h3>{name}</h3>
-            <div className="tools">• {tools}</div>
-            <p className="project-p">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Debitis praesentium facilis alias nihil minus beatae, unde
-                laudantium quidem possimus modi.
-            </p>
-            <img src={img} alt="" />
+            <div className="tools">
+                {tools.map((tool) => (
+                    <span>• {tool} </span>
+                ))}
+            </div>
+            <p className="project-p">{desc}</p>
+            <img src={img} alt="Screenshot of the project on various devices" />
             <span className="flex centered">
                 <a href={live}>
                     <RiExternalLinkLine />

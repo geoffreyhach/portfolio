@@ -6,31 +6,27 @@ import Divider from "../components/Divider";
 const projects = [
     {
         name: "Space Agency Website",
-        tools: "React - CSS",
+        tools: ["React", "CSS"],
+        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis praesentium facilis alias nihil minus beatae, unde laudantium quidem possimus modi.",
         live: "https://geoffreyhach.github.io/react-spacetourism/",
         repo: "https://github.com/geoffreyhach/react-spacetourism",
         direction: "from-left",
     },
     {
         name: "Projet 2",
-        tools: "React - CSS",
+        tools: ["React", "CSS", "HTML"],
+        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis praesentium facilis alias nihil minus beatae, unde laudantium quidem possimus modi.",
         live: "https://geoffreyhach.github.io/react-spacetourism/",
         repo: "https://github.com/geoffreyhach/react-spacetourism",
         direction: "from-right",
     },
     {
         name: "Projet 3",
-        tools: "React - CSS",
+        tools: ["React", "CSS"],
+        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis praesentium facilis alias nihil minus beatae, unde laudantium quidem possimus modi.",
         live: "https://geoffreyhach.github.io/react-spacetourism/",
         repo: "https://github.com/geoffreyhach/react-spacetourism",
         direction: "from-left",
-    },
-    {
-        name: "Projet 4",
-        tools: "Rqsbdkqsjfbfj",
-        live: "https://geoffreyhach.github.io/react-spacetourism/",
-        repo: "https://github.com/geoffreyhach/react-spacetourism",
-        direction: "from-right",
     },
 ];
 
@@ -48,6 +44,7 @@ const Projects = () => {
                 <Project
                     name={project.name}
                     tools={project.tools}
+                    desc={project.desc}
                     live={project.live}
                     repo={project.repo}
                     direction={project.direction}

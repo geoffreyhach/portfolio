@@ -1,7 +1,7 @@
 import React from "react";
 
 const Divider = ({ bgColor = "bg-primary" }) => {
-    return <span className={`divider ${bgColor}`}></span>;
+    return <div className={`divider ${bgColor}`}></div>;
 };
 
 export default Divider;
