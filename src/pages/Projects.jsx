@@ -15,7 +15,7 @@ const projects = [
     {
         name: "Projet 2",
         tools: ["React", "CSS", "HTML"],
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis praesentium facilis alias nihil minus beatae, unde laudantium quidem possimus modi.",
+        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis praesentium facilis alias nihil minus beatae, unde laudantium quidem possimus modi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis praesentium facilis alias nihil minus beatae, unde laudantium quidem possimus modi.",
         live: "https://geoffreyhach.github.io/react-spacetourism/",
         repo: "https://github.com/geoffreyhach/react-spacetourism",
         direction: "from-right",
@@ -42,6 +42,7 @@ const Projects = () => {
 
             {projects.map((project) => (
                 <Project
+                    key={projects.name}
                     name={project.name}
                     tools={project.tools}
                     desc={project.desc}

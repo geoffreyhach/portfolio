@@ -29,7 +29,6 @@ const Home = () => {
             <div>
                 <img className="profile" src={ProfilPic} alt="" />
             </div>
-            <Divider bgColor="bg-secondary" />
         </section>
     );
 };

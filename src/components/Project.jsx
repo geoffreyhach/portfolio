@@ -23,7 +23,7 @@ const Project = ({
             <h3>{name}</h3>
             <div className="tools">
                 {tools.map((tool) => (
-                    <span>• {tool} </span>
+                    <span key={tool}>• {tool} </span>
                 ))}
             </div>
             <p className="project-p">{desc}</p>

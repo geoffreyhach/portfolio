@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import Footer from "./components/Footer";
 import SocialMedias from "./components/SocialMedias";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                 <About />
                 <Projects />
             </main>
+            <Footer />
             <SocialMedias />
         </>
     );

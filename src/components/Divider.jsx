@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Divider = ({ bgColor = "bg-primary" }) => {
-    return <div className={`divider ${bgColor}`}></div>;
+const Divider = ({ bgColor = "bg-primary", isVertical = false }) => {
+    return (
+        <div
+            className={`divider ${bgColor} ${isVertical ? "vertical" : ""}`}
+        ></div>
+    );
 };
 
 export default Divider;
