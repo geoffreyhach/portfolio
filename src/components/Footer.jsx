@@ -4,8 +4,13 @@ const Footer = () => {
     return (
         <footer className="flex bg-white color-primary">
             <a href="#">Mentions legales</a>
-            <a href="#">Contact</a>
-            <a href="#">Lien 2</a>
+            <a
+                onClick={() =>
+                    (window.location = "mailto:je.suis.geoffrey.hach@gmail.com")
+                }
+            >
+                Contact
+            </a>
         </footer>
     );
 };

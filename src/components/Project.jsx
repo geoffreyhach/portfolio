@@ -1,14 +1,13 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 
-import img from "../assets/images/projettest.png";
-
 const Project = ({
     name,
     tools,
     desc,
     live,
     repo,
+    img,
     direction = "from-right",
 }) => {
     const { ref, inView } = useInView();
@@ -27,7 +26,10 @@ const Project = ({
                 ))}
             </div>
             <p className="project-p">{desc}</p>
-            <img src={img} alt="Screenshot of the project on various devices" />
+            <img
+                src={require("../assets/images/" + img + ".png")}
+                alt="Screenshot of the project on various devices"
+            />
             <span className="flex centered">
                 <a href={live}>
                     <RiExternalLinkLine />

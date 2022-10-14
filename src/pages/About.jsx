@@ -17,7 +17,9 @@ const About = () => {
                 className={`about-p color-white ${inView ? "from-right" : ""}`}
             >
                 I'm a passionated junior front-end developper who mostly work
-                with React and node.js
+                with Javascript/Typescript & React/React Native.
+                <br /> I'm eager to expend further my skills into perfecting
+                accessibility and responsive design.
             </p>
             <Divider />
         </section>

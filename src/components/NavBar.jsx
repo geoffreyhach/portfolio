@@ -18,7 +18,14 @@ const NavBar = () => {
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                    <a
+                        onClick={() =>
+                            (window.location =
+                                "mailto:je.suis.geoffrey.hach@gmail.com")
+                        }
+                    >
+                        Contact
+                    </a>
                 </nav>
             </header>
         </>
