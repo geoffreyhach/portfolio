@@ -14,6 +14,15 @@ const projects = [
         direction: "from-left",
     },
     {
+        name: "Comments Section Challenge",
+        tools: ["React", "MUI"],
+        desc: "Comments section challenge populated with a json file. I also implemented a few cypress tests during the developpment",
+        live: "https://geoffreyhach.github.io/commentsection-challenge/",
+        repo: "https://github.com/geoffreyhach/commentsection-challenge",
+        img: "mockupcomments",
+        direction: "from-right",
+    },
+    {
         name: "Rock, paper, scissors",
         tools: ["React", "CSS", "Local-storage"],
         desc: "Rock, paper, scissors game based on a front-end mentor challenge. I learned how to implement logic rules and to store a user's score",
