@@ -19,6 +19,7 @@ const NavBar = () => {
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
                     <a
+                        href="home"
                         onClick={() =>
                             (window.location =
                                 "mailto:je.suis.geoffrey.hach@gmail.com")
