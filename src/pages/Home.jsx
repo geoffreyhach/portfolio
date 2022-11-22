@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import ContactForm from "../components/ContactForm";
 import Divider from "../components/Divider";
 
-const Home = () => {
+const Home = ({ isContactFormOpen, setIsContactFormOpen }) => {
     return (
         <section id="home" className="full-page home flex flex-col flow">
+            <ContactForm
+                isContactFormOpen={isContactFormOpen}
+                setIsContactFormOpen={setIsContactFormOpen}
+            />
             <div className="flex flex-col tagline centered flow">
                 <h1>
                     <span>I'M </span>
@@ -22,10 +27,7 @@ const Home = () => {
                 <Divider bgColor="bg-secondary" />
                 <button
                     className="color-primary cta"
-                    onClick={() =>
-                        (window.location =
-                            "mailto:je.suis.geoffrey.hach@gmail.com")
-                    }
+                    onClick={() => setIsContactFormOpen(true)}
                 >
                     Work with me !
                 </button>

@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+input, button, textarea, select {
+  font: inherit;
+}
+
 /* ===========
   UTILITY CLASSES
 ============ */
@@ -282,6 +286,20 @@ footer {
   z-index: 1000;
 }
 
+.primary-navigation button {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color:var(--color-secondary);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.primary-navigation button:hover,
+footer button:hover {
+  opacity: .8
+}
+
 .primary-navigation.active {
   transform: translateX(0);
   background-color: var(--color-primary-darker);
@@ -403,6 +421,70 @@ header .divider {
 .cta:hover::before  {
   height: 100%;
 }
+
+.contact-modal {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border: none;
+  min-width: min(90vw, 600px);
+  background-color: var(--color-secondary);
+  border: 5px solid var(--color-white);
+  border-radius: 5px;
+}
+
+.contact-modal form {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color:var(--color-white);
+  gap: .5rem;
+  padding: 1rem;
+}
+
+.contact-modal input,
+.contact-modal textarea {
+  background-color: var(--color-white);
+  padding:.5rem;
+  border: 1px solid var(--color-secondary-ligther);
+  border-radius: 5px;
+}
+
+.contact-modal button {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color:var(--color-white);
+  align-self: flex-end;
+  padding: .5em;
+  transition: 200ms background-color ease-in;
+  cursor: pointer;
+}
+
+.contact-modal > button {
+  margin-right: 120px;
+}
+
+.contact-modal button:hover {
+  background-color: var(--color-primary);
+
+}
+
+.contact-modal svg {
+  color: var(--color-white);
+  animation: 0ms opacity-anim ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0;
+}
+
+.email-sent {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 2rem 1rem;
+  color: var(--color-white)
+} 
+
+
 
 aside svg {
   opacity: .7;
@@ -654,14 +736,18 @@ h2 {
 }
 
 
-footer a{
+footer a,
+footer button{
   display: inline-block;
   position: relative;
   text-decoration: none;
+  border: none;
   color: var(--color-primary-darker);
 }
 
-footer a::after{
+footer a::after,
+footer button::after
+{
   content:'';
   position: absolute;
   height: 2px;
@@ -672,7 +758,11 @@ footer a::after{
   transition: 150ms width ease-in-out;
 }
 
-footer a:hover::after{
+
+
+footer a:hover::after,
+footer button:hover::after
+{
   width: 100%;
 }
 

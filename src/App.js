@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
@@ -7,15 +8,19 @@ import Footer from "./components/Footer";
 import SocialMedias from "./components/SocialMedias";
 
 function App() {
+    const [isContactFormOpen, setIsContactFormOpen] = useState(false);
     return (
         <>
-            <NavBar />
+            <NavBar setIsContactFormOpen={setIsContactFormOpen} />
             <main className="bg-white">
-                <Home />
+                <Home
+                    isContactFormOpen={isContactFormOpen}
+                    setIsContactFormOpen={setIsContactFormOpen}
+                />
                 <About />
                 <Projects />
             </main>
-            <Footer />
+            <Footer setIsContactFormOpen={setIsContactFormOpen} />
             <SocialMedias />
         </>
     );
