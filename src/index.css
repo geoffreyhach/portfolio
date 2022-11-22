@@ -286,6 +286,21 @@ footer {
   z-index: 1000;
 }
 
+.primary-navigation button,
+footer button {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color:var(--color-secondary);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.primary-navigation button:hover,
+footer button:hover {
+  opacity: .8
+}
+
 .primary-navigation.active {
   transform: translateX(0);
   background-color: var(--color-primary-darker);
@@ -422,6 +437,8 @@ header .divider {
 .contact-modal form {
   display: flex;
   flex-direction: column;
+  font-weight: 600;
+  color:var(--color-white);
   gap: .5rem;
   padding: 1rem;
 }
@@ -437,10 +454,38 @@ header .divider {
 .contact-modal button {
   background-color: transparent;
   border: none;
+  border-radius: 5px;
+  color:var(--color-white);
   align-self: flex-end;
+  padding: .5em;
+  transition: 200ms background-color ease-in;
   cursor: pointer;
+}
+
+.contact-modal > button {
+  margin-right: 120px;
+}
+
+.contact-modal button:hover {
+  background-color: var(--color-primary);
 
 }
+
+.contact-modal svg {
+  color: var(--color-white);
+  animation: 0ms opacity-anim ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0;
+}
+
+.email-sent {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 2rem 1rem;
+  color: var(--color-white)
+} 
+
+
 
 aside svg {
   opacity: .7;

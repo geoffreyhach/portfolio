@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-function ContactForm({ isContactFormOpen, setIsModalFormOpen }) {
+function ContactForm({ isContactFormOpen, setIsContactFormOpen }) {
+    const [emailSent, setEmailSent] = useState(false);
     const myRef = useRef();
     const formRef = useRef();
 
@@ -23,6 +24,7 @@ function ContactForm({ isContactFormOpen, setIsModalFormOpen }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setEmailSent(true);
 
         console.log(formRef.current);
 
@@ -36,27 +38,33 @@ function ContactForm({ isContactFormOpen, setIsModalFormOpen }) {
 
     return (
         <dialog ref={myRef} className="contact-modal">
-            <form ref={formRef} onSubmit={handleSubmit}>
-                <button
-                    onClick={() => {
-                        setIsModalFormOpen(false);
-                    }}
-                >
-                    <MaterialSymbolsCloseRounded />
-                </button>
-                <label htmlFor="name">Your name</label>
-                <input type="text" id="name" name="from_name" />
-                <label htmlFor="email">Your E-mail</label>
-                <input type="text" id="email" name="user_email" />
-                <label htmlFor="message"></label>
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    cols="33"
-                ></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
+            <button
+                onClick={() => {
+                    setIsContactFormOpen(false);
+                }}
+            >
+                <MaterialSymbolsCloseRounded />
+            </button>
+            {!emailSent ? (
+                <form ref={formRef} onSubmit={handleSubmit}>
+                    <label htmlFor="name">Your name</label>
+                    <input type="text" id="name" name="from_name" />
+                    <label htmlFor="email">Your E-mail</label>
+                    <input type="text" id="email" name="user_email" />
+                    <label htmlFor="message">Your message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        cols="33"
+                    ></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            ) : (
+                <div className="email-sent">
+                    <p>Email sent ! I'll answer as soon as possible.</p>
+                </div>
+            )}
         </dialog>
     );
 }

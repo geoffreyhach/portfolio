@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import ContactForm from "../components/ContactForm";
 import Divider from "../components/Divider";
 
-const Home = () => {
-    const [isContactFormOpen, setIsModalFormOpen] = useState(false);
-
+const Home = ({ isContactFormOpen, setIsContactFormOpen }) => {
     return (
         <section id="home" className="full-page home flex flex-col flow">
             <ContactForm
                 isContactFormOpen={isContactFormOpen}
-                setIsModalFormOpen={setIsModalFormOpen}
+                setIsContactFormOpen={setIsContactFormOpen}
             />
             <div className="flex flex-col tagline centered flow">
                 <h1>
@@ -29,7 +27,7 @@ const Home = () => {
                 <Divider bgColor="bg-secondary" />
                 <button
                     className="color-primary cta"
-                    onClick={() => setIsModalFormOpen(true)}
+                    onClick={() => setIsContactFormOpen(true)}
                 >
                     Work with me !
                 </button>
