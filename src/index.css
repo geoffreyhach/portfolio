@@ -286,8 +286,7 @@ footer {
   z-index: 1000;
 }
 
-.primary-navigation button,
-footer button {
+.primary-navigation button {
   font-size: 1.8rem;
   font-weight: 800;
   color:var(--color-secondary);
@@ -737,14 +736,18 @@ h2 {
 }
 
 
-footer a{
+footer a,
+footer button{
   display: inline-block;
   position: relative;
   text-decoration: none;
+  border: none;
   color: var(--color-primary-darker);
 }
 
-footer a::after{
+footer a::after,
+footer button::after
+{
   content:'';
   position: absolute;
   height: 2px;
@@ -755,7 +758,11 @@ footer a::after{
   transition: 150ms width ease-in-out;
 }
 
-footer a:hover::after{
+
+
+footer a:hover::after,
+footer button:hover::after
+{
   width: 100%;
 }
 

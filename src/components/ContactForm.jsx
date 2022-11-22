@@ -26,14 +26,12 @@ function ContactForm({ isContactFormOpen, setIsContactFormOpen }) {
         e.preventDefault();
         setEmailSent(true);
 
-        console.log(formRef.current);
-
-        // emailjs.sendForm(
-        //     "service_ktljp6v",
-        //     "template_m3u18gv",
-        //     formRef.current,
-        //     "kcZQrlI6KOz4AF0p7"
-        // );
+        emailjs.sendForm(
+            "service_ktljp6v",
+            "template_m3u18gv",
+            formRef.current,
+            "kcZQrlI6KOz4AF0p7"
+        );
     };
 
     return (
@@ -41,6 +39,7 @@ function ContactForm({ isContactFormOpen, setIsContactFormOpen }) {
             <button
                 onClick={() => {
                     setIsContactFormOpen(false);
+                    setEmailSent(false);
                 }}
             >
                 <MaterialSymbolsCloseRounded />
