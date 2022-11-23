@@ -1,8 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function ContactForm({ isContactFormOpen, setIsContactFormOpen }) {
     const [emailSent, setEmailSent] = useState(false);
+    const [isVerified, setIsVerified] = useState(false);
     const myRef = useRef();
     const formRef = useRef();
 
@@ -34,6 +36,10 @@ function ContactForm({ isContactFormOpen, setIsContactFormOpen }) {
         );
     };
 
+    const handleChange = () => {
+        setIsVerified(true);
+    };
+
     return (
         <dialog ref={myRef} className="contact-modal">
             <button
@@ -57,7 +63,16 @@ function ContactForm({ isContactFormOpen, setIsContactFormOpen }) {
                         rows="5"
                         cols="33"
                     ></textarea>
-                    <button type="submit">Envoyer</button>
+                    <div className="flex-col centered">
+                        {" "}
+                        <ReCAPTCHA
+                            sitekey="6LdN1SojAAAAAD4iqk6zhecJCTP8MidnNPw6X4iD"
+                            onChange={handleChange}
+                        />
+                        <button type="submit" disabled={!isVerified}>
+                            Envoyer
+                        </button>
+                    </div>
                 </form>
             ) : (
                 <div className="email-sent">

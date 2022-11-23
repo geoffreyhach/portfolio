@@ -467,7 +467,18 @@ header .divider {
 
 .contact-modal button:hover {
   background-color: var(--color-primary);
+}
 
+button:disabled,
+button[disabled] {
+  cursor:not-allowed;
+  color: grey;
+}
+
+button:disabled:hover,
+button[disabled]:hover {
+  background-color: unset;
+  color: grey
 }
 
 .contact-modal svg {
