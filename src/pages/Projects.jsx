@@ -7,7 +7,7 @@ const projects = [
     {
         name: "Secret Santa Generator",
         tools: ["React", "MUI", "Express.js", "Joi", "Sendgrid"],
-        desc: "Secret Santa web app randomizing gift giver and gift receiver. I developped the front-end with React, MUI, and Joi for the data validation. I created an API with Express.js to send emails to the participants and the organizer via SendGrid.",
+        desc: "Secret Santa web app generating gift givers and gift receivers. I developped the front-end with React, MUI, and Joi for the data validation. I created an API with Express.js to send emails to the participants and the organizer via SendGrid.",
         live: "https://santa-secret.fr/",
         repo: "https://github.com/geoffreyhach/secretsanta",
         img: "mockupsecretsanta",
